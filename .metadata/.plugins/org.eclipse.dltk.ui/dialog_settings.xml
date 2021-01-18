@@ -3,4 +3,6 @@
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="3"/>
 	</section>
+	<section name="CallHierarchySearchScope">
+	</section>
 </section>
