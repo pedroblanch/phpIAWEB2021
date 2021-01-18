@@ -20,10 +20,10 @@ if(empty($provincia)){
 }
 
 if(!isset($familiaNumerosa)){
-    $repite=false;
+    $familiaNumerosa=false;
 }
 else{
-    $repite=true;
+    $familiaNumerosa=true;
 }
 
 if(!isset($estadoCivil)){
