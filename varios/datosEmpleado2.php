@@ -7,6 +7,8 @@ $categoria=$_GET['categoria'];
 $reduccionJornada=$_GET['reduccionJornada'];
 $jefeProyecto=$_GET['jefeProyecto'];
 $departamento=$_GET['departamento'];
+$formacion=$_GET['formacion'];
+$conocimientos=$_GET['conocimientos'];
 
 if(empty($apellidos)){
     echo("faltan los apellidos");
@@ -45,6 +47,19 @@ if(!isset($departamento)){
     exit;
 }
 
+if(!isset($conocimientos)){
+    echo ("Faltan los conocimientos");
+    exit;
+}
+
+if(empty($formacion)){
+    echo ("Falta escoger la formación");
+    exit;
+}
+
+
+
+
 //si llega aquí los parámetros son correctos
 echo("Nombre: $nombre<br>");
 echo("Apelidos: $apellidos<br>");
@@ -65,5 +80,9 @@ else{
     echo " no";
 }
 echo("<br>Departamento: $departamento");
-
+echo("<br>Formación: $formacion");
+echo("<br>Conocimientos: ");
+foreach ($conocimientos as $conocimiento) {
+    echo "$conocimiento ";
+}
 ?>

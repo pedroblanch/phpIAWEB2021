@@ -24,6 +24,22 @@ Departamento:
   <option value="administracion">administracion</option>
 </select>
 <br>
+Conocimientos: 
+<select name="conocimientos[]" size=3 multiple>
+  <option value="java">java</option>
+  <option value="php">php</option>
+  <option value="asp">asp</option>
+  <option value="c">c</option>
+</select>
+<br>
+Formación: 
+<select name="formacion" size=1>
+  <option value=""></option>
+  <option value="universitaria">universitaria</option>
+  <option value="fpSuperior">fp superior</option>
+  <option value="bachillerato">bachillerato</option>
+</select>
+<br>
 <br>
 <input type="submit" value="Aceptar">
 </form>
