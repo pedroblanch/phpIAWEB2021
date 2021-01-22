@@ -7,9 +7,10 @@
 $servername = "localhost";
 $username = "sakila";
 $password = "sakila";
+$baseDatos = "sakila";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $baseDatos);
 
 // Check connection
 //si la conexión ha ido bien el atributo connect_error vale null
@@ -21,16 +22,18 @@ if ($conn->connect_error) {
 }
 //si se llega aquí significa que connect_err vale null
 //y por tanto se ha conectado bien
-$sql = "select title, description, release_year from film";
+$sql = "select title from film";
 $result = $conn->query($sql);
 
-if ($result) {
+if ($result) {  //si el objeto resultado no vale null
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    $row = $result->fetch_assoc();  //lee la primera fila del resultado
+    while($row) {  //mientras la fila leida no sea null
         echo "title: " . $row["title"]. " - description: " . $row["description"]. " - release_year: " . $row["release_year"]. "<br>";
+        $row = $result->fetch_assoc();//leo la siguiente fila del resultado
     }
-} else {
-    echo "0 results";
+} else {  //el objeto resultado vale null
+    echo "error en la consulta sql";
 }
 
 

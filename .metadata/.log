@@ -423,3 +423,140 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.wst.sse.ui 2 2 2021-01-21 08:41:05.591
 !MESSAGE Configuration element ConfigurationElementHandle [name: proposalComputerExtendedActivation, id: org.eclipse.wst.jsdt.web.ui.ContentAssistProposals, handle id: 10138, namespace: org.eclipse.php.ui] intented to extend an existing completion proposal computer specified an invalid completion proposal computer ID org.eclipse.wst.jsdt.web.ui.ContentAssistProposals
+!SESSION 2021-01-22 13:59:17.190 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=11.0.9.1
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.php.product
+
+!ENTRY org.eclipse.wst.sse.ui 2 2 2021-01-22 13:59:24.316
+!MESSAGE Configuration element ConfigurationElementHandle [name: proposalComputerExtendedActivation, id: org.eclipse.wst.jsdt.web.ui.ContentAssistProposals, handle id: 10138, namespace: org.eclipse.php.ui] intented to extend an existing completion proposal computer specified an invalid completion proposal computer ID org.eclipse.wst.jsdt.web.ui.ContentAssistProposals
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:22.492
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:27.487
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:32.486
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:37.487
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:37.488
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.communication.XDebugCommunicationDaemon$CommunicationDaemon : Unexpected Exception: Listener thread still listening
+!STACK 0
+java.lang.NegativeArraySizeException: -176
+	at org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession.readResponse(DBGpSession.java:707)
+	at org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession.<init>(DBGpSession.java:395)
+	at org.eclipse.php.internal.debug.core.xdebug.communication.XDebugCommunicationDaemon$CommunicationDaemon.startConnection(XDebugCommunicationDaemon.java:221)
+	at org.eclipse.php.internal.debug.core.daemon.AbstractDebuggerCommunicationDaemon$ReceiverThread.run(AbstractDebuggerCommunicationDaemon.java:215)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:42.489
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:42.491
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.php.debug.core 4 4 2021-01-22 14:10:47.040
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.session.DBGpSession : Unexpected null from readResponse waiting for Init
+
+!ENTRY org.eclipse.ui.navigator 4 2 2021-01-22 14:12:50.937
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.internal.corext.refactoring.reorg.ReorgUtils.getResources(ReorgUtils.java:207)
+	at org.eclipse.dltk.internal.ui.navigator.ScriptDropAssistant.handleValidateMove(ScriptDropAssistant.java:215)
+	at org.eclipse.dltk.internal.ui.navigator.ScriptDropAssistant.validateDrop(ScriptDropAssistant.java:125)
+	at org.eclipse.ui.navigator.CommonDropAdapter$2.run(CommonDropAdapter.java:235)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.CommonDropAdapter.validateDrop(CommonDropAdapter.java:231)
+	at org.eclipse.jface.viewers.ViewerDropAdapter.doDropValidation(ViewerDropAdapter.java:222)
+	at org.eclipse.jface.viewers.ViewerDropAdapter.dragOver(ViewerDropAdapter.java:260)
+	at org.eclipse.swt.dnd.DNDListener.handleEvent(DNDListener.java:84)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5785)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1427)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1453)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1436)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1225)
+	at org.eclipse.swt.dnd.DropTarget.drag_motion(DropTarget.java:466)
+	at org.eclipse.swt.dnd.DropTarget.Drag_Motion(DropTarget.java:262)
+	at org.eclipse.swt.internal.gtk.GTK.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1527)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4524)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2021-01-22 14:12:51.088
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.internal.corext.refactoring.reorg.ReorgUtils.getResources(ReorgUtils.java:207)
+	at org.eclipse.dltk.internal.ui.navigator.ScriptDropAssistant.handleValidateMove(ScriptDropAssistant.java:215)
+	at org.eclipse.dltk.internal.ui.navigator.ScriptDropAssistant.validateDrop(ScriptDropAssistant.java:125)
+	at org.eclipse.ui.navigator.CommonDropAdapter$2.run(CommonDropAdapter.java:235)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.CommonDropAdapter.validateDrop(CommonDropAdapter.java:231)
+	at org.eclipse.jface.viewers.ViewerDropAdapter.doDropValidation(ViewerDropAdapter.java:222)
+	at org.eclipse.jface.viewers.ViewerDropAdapter.dragOver(ViewerDropAdapter.java:260)
+	at org.eclipse.swt.dnd.DNDListener.handleEvent(DNDListener.java:84)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5785)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1427)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1453)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1436)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1225)
+	at org.eclipse.swt.dnd.DropTarget.drag_motion(DropTarget.java:466)
+	at org.eclipse.swt.dnd.DropTarget.Drag_Motion(DropTarget.java:262)
+	at org.eclipse.swt.internal.gtk.GTK.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1527)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4524)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
