@@ -1,8 +1,9 @@
 <?php
 /*
- * Programa que muestra los principales datos
- * de todas las películas existentes en la base de datos 
- * sakila
+ * Mostrar para cada pago la fecha de dicho pago, 
+ * el cliente que lo realiza y el importe del pago. 
+ * En el pie del listado deberá aparecer la cantidad total de pagos realizados. 
+ * Deberá aparecer el apellido y el nombre del cliente.
  */
 $servername = "localhost";
 $username = "sakila";
@@ -22,20 +23,31 @@ if ($conn->connect_error) {
 }
 //si se llega aquí significa que connect_err vale null
 //y por tanto se ha conectado bien
-$sql = "select title, description, release_year from film";
+$sql = "select payment_date, last_name, first_name, amount 
+from payment, customer
+where payment.customer_id=customer.customer_id;";
 $result = $conn->query($sql);
 
 if ($result) {  //si el objeto resultado no vale null
     echo "<table border=1>";
+    $total=0.0;
     // output data of each row
     $row = $result->fetch_assoc();  //lee la primera fila del resultado
     while($row) {  //mientras la fila leida no sea null
-        $title=$row['title'];
-        $descripcion=$row['description'];
-        $release_year=$row['release_year'];
-        echo "<tr><td>$title</td><td>$descripcion</td><td>$release_year</td></tr>";
+        $payment_date=$row['payment_date'];
+        $last_name=$row['last_name'];
+        $first_name=$row['first_name'];
+        $amount=$row['amount'];
+        $total=$total+$amount;
+        echo "<tr>
+               <td>$payment_date</td>
+               <td>$last_name</td>
+               <td>$first_name</td>
+               <td>$amount</td>
+              </tr>";
         $row = $result->fetch_assoc();//leo la siguiente fila del resultado
-    }
+    }//end_while
+    echo "<tr><td></td><td></td><td>Total:</td><td>$total</td></tr>";
     echo "</table>";
 } else {  //el objeto resultado vale null
     echo "error en la consulta sql";
