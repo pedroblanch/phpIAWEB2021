@@ -25,9 +25,10 @@ if ($conn->connect_error) {
 
 ?>
 
-<form action="verFilmsPorCategoria" method="get">
+<form action="verFilmsPorCategoria2.php" method="get">
 	Categoria: 
 	<select name="category_id" size=1>
+	  <option value=""></option>
       <?php
         $sql = "select category_id, name from category order by name;";
         $result = $conn->query($sql);
