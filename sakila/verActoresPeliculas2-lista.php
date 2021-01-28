@@ -38,27 +38,35 @@ if(!$row){
 }
 $title=$row['title'];
 echo "<h1>Título $title</h1>";
+?>
 
-//a continuación muestro todas los actores de dicha película
-$sql = "select first_name, last_name 
-from actor a, film_actor fa
-where fa.film_id=$film_id
-and a.actor_id=fa.actor_id;"; 
-$result = $conn->query($sql);
-if(!$result){
-    die("Error en la consulta de leer actores de una película");
-}
-echo "<table border=1>";
-$row = $result->fetch_assoc();  //lee la primera fila del resultado
-while($row) {  //mientras la fila leida no sea null
-    $last_name=$row['last_name'];
-    $first_name=$row['first_name'];
-    echo "<tr>";
-    echo "<td>$last_name, $first_name</td>";
-    echo "</tr>";
-    $row = $result->fetch_assoc();//leo la siguiente fila del resultado
-}
-echo "</table>";
+<form action="verActoresPeliculas3-lista.php" method="get">
 
-$conn->close(); 
-?> 
+    <?php
+    //a continuación muestro una lista con todos los actores de dicha película
+    $sql = "select a.actor_id, first_name, last_name 
+    from actor a, film_actor fa
+    where fa.film_id=$film_id
+    and a.actor_id=fa.actor_id;"; 
+    $result = $conn->query($sql);
+    if(!$result){
+        die("Error en la consulta de leer actores de una película");
+    }
+    echo "<br><br>";
+    echo "<select name='actor_id' size=10>";
+        $row = $result->fetch_assoc();  //lee la primera fila del resultado
+        while($row) {  //mientras la fila leida no sea null
+            $actor_id=$row['actor_id'];
+            $last_name=$row['last_name'];
+            $first_name=$row['first_name'];
+            echo "<option value='$actor_id'>$last_name, $first_name</option>";
+            $row = $result->fetch_assoc();//leo la siguiente fila del resultado
+        }
+    echo "</select>";
+    
+    $conn->close(); 
+    ?> 
+	<br><br>
+	<input type="submit" value="Aceptar">
+</form>    
+   
