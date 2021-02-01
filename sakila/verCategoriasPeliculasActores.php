@@ -33,7 +33,7 @@ while($row) {  //mientras la fila leida no sea null
     echo "<tr style='background-color:#f1f1c1';><td colspan='2'><h1>$name</h1></td></tr>";
 
     //busco todas las películas de esta categoría y las muestro
-    $sql2 = "select title, description from film f, film_category fc
+    $sql2 = "select f.film_id, title, description from film f, film_category fc
                 where fc.category_id=$category_id
                     and fc.film_id=f.film_id;";
     $result2 = $conn->query($sql2);
@@ -43,6 +43,22 @@ while($row) {  //mientras la fila leida no sea null
         $title=$row2['title'];
         $description=$row2['description'];
         echo "<tr><td><h2>$title</h2></td><td>$description</td></tr>";
+        
+        //muestro todos los actores que participan en esta película
+        $sql3 = "select first_name, last_name from actor a, film_actor fa 
+                   where fa.film_id=$film_id
+                    and fa.actor_id=a.actor_id;";
+        $result3 = $conn->query($sql3);
+        $row3 = $result3->fetch_assoc();  //lee la primera fila del resultado
+        while($row3) {  //mientras la fila leida no sea null
+            $last_name=$row3['last_name'];
+            $first_name=$row3['first_name'];
+            echo "<tr><td>$last_name</td><td>$first_name</td></tr>";         
+            $row3 = $result3->fetch_assoc();//leo la siguiente fila del resultado
+        }//end_while_actores
+        
+        //acabo de tratar los actores de la película
+        
         $row2 = $result2->fetch_assoc();//leo la siguiente fila del resultado
     }//end_while_peliculas
     
