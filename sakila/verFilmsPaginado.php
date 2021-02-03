@@ -24,7 +24,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 //busco el total de peliculas
-$numElementos=10;
+$numElementos=9;
 $sql="select count(*) as numFilas from film;";
 $result = $conn->query($sql);
 if (!$result) {  //si el objeto resultado no vale null
@@ -33,7 +33,14 @@ if (!$result) {  //si el objeto resultado no vale null
 $row = $result->fetch_assoc();  //lee la primera fila del resultado
 $numFilas=$row["numFilas"];
 echo "$numFilas";
-$offsetUltimaPagina=$numFilas-($numFilas%$numElementos)-$numElementos;
+$offsetUltimaPagina=$numFilas-($numFilas%$numElementos)-1;
+if($offsetUltimaPagina==($numFilas-1)){
+    $offsetUltimaPagina=$numFilas-$numElementos;
+}
+if($offsetUltimaPagina<0){
+    $offsetUltimaPagina=0;
+}
+
 echo "<br>$offsetUltimaPagina";
 
 //busco las peliculas con paginacion
@@ -56,8 +63,8 @@ while($row) {  //mientras la fila leida no sea null
 echo "</table>";
 echo "<br><br>";
 echo "<a href='verFilmsPaginado.php?offset=0'>Primero</a>";
-echo " <a href='verFilmsPaginado.php?offset=".($offset+10)."'>Siguiente</a>";
-echo " <a href='verFilmsPaginado.php?offset=".($offset-10)."'>Anterior</a>";
+echo " <a href='verFilmsPaginado.php?offset=".($offset+$numElementos)."'>Siguiente</a>";
+echo " <a href='verFilmsPaginado.php?offset=".($offset-$numElementos)."'>Anterior</a>";
 echo " <a href='verFilmsPaginado.php?offset=".($offsetUltimaPagina)."'>Ultimo</a>";
     
 $conn->close(); 
