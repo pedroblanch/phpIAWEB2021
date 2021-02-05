@@ -24,7 +24,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 //busco el total de peliculas
-$numElementos=9;
+$numElementos=10;
 $sql="select count(*) as numFilas from film;";
 $result = $conn->query($sql);
 if (!$result) {  //si el objeto resultado no vale null
