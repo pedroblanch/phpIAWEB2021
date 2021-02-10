@@ -105,7 +105,14 @@ $address_id_cliente=$row['address_id'];
     <br>
     email: <input type='text' name='email' value="<?php echo($email)?>">
     <br>
-    Active: <input type='text' name='active' value="<?php echo($active)?>">
+    <?php 
+    if($active){
+        echo("Active: <input type='checkbox' name='active' value=1 checked>");
+    }
+    else{
+        echo("Active: <input type='checkbox' name='active' value=1>");
+    }
+    ?>
     <br>
     Create Date: <input type='text' name='create_date' value="<?php echo($create_date)?>">
     <br>

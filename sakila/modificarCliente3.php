@@ -29,7 +29,7 @@ if(!isset($email) || empty($email)){
 }
 $active=$_GET['active'];
 if(!isset($active)){
-    die("Falta el active");
+    $active=0;
 }
 $create_date=$_GET['create_date'];
 if(!isset($create_date) || empty($create_date)){
